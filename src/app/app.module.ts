@@ -1,16 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {Routes,RouterModule} from '@angular/router'
+import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-
+import {Server} from './server/server.component';
+import {Demo} from './demo/demo';
+import { Demo2Component } from './demo2/demo2.component';
+import {ServerHttp} from './httpServer'
+ const appRoutes:Routes =[
+   {path:"",component:AppComponent},
+   {path:"server",component:Server},
+   {path:"demo1",component:Demo},
+   {path:"demo2",component:Demo2Component}
+ ]
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    Server,
+    Demo,
+    Demo2Component,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes),
+    HttpModule
   ],
-  providers: [],
+  providers: [ServerHttp],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

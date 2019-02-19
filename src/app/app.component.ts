@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ServerHttp} from './httpServer'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-first-app';
+  constructor(private ServerHttp:ServerHttp) {}
+  getData = () => {
+    this.ServerHttp.get()
+    .subscribe(response => {
+      console.log(response.json());
+    });
+  }
 }

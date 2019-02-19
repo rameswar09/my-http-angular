@@ -1,0 +1,6 @@
+<p>name:{{name}}</p>
+<p>status:{{show}}</p>
+<button (click)=onClick()>click</button>
+<p *ngIf="show">{{"hello"}}</p>
+<input type="text" (input)=onUpdate($event)>
+<p *ngFor="let item of names">{{item}}</p>
