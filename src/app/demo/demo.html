@@ -1,1 +1,4 @@
 <p>hi this demo </p>
+<select (change)="onChangevalue($event)" [value]="2">
+  <option *ngFor="let item of test" [value]="item">{{item}}</option>
+</select>

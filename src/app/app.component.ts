@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ServerHttp} from './httpServer'
+import { ServerHttp } from './httpServer'
 
 @Component({
   selector: 'app-root',
@@ -7,11 +7,16 @@ import {ServerHttp} from './httpServer'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private ServerHttp:ServerHttp) {}
+  array = [1, 2, 34];
+  constructor(private ServerHttp: ServerHttp) { }
   getData = () => {
     this.ServerHttp.get()
-    .subscribe(response => {
-      console.log(response.json());
-    });
+      .subscribe(response => {
+        console.log(response.json());
+      });
+  }
+  onAddNumber = (data) => {
+    this.array.push(data);
   }
 }
+// 9833860960
