@@ -5,9 +5,13 @@
     <li><a routerLink="/demo1">demo1</a></li>
     <li><a routerLink="/demo2">demo2</a></li>
 </ul>
-<p>Input box</p>
-<app-input (addNumber)="onAddNumber($event)"></app-input>
-<app-servers *ngFor="let item of array"
+<!-- <button type="button" (click)="onClickNavigateRoute()">navigatelLinks</button> -->
+<!-- <p>Input box</p> -->
+<!-- <app-input (addNumber)="onAddNumber($event)"></app-input> -->
+<!-- <app-servers *ngFor="let item of array"
 [x]="item"
-></app-servers>
+></app-servers> -->
+<app-input (addNumber)="onAddNumber($event)"></app-input>
+<p>total:{{total}}</p>
 <router-outlet></router-outlet>
+    
